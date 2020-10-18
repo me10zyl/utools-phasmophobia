@@ -1,0 +1,17 @@
+{
+	"pluginName": "恐鬼症小助手",
+	"description": "恐鬼症小助手-快速找出鬼类型",
+	"version": "0.0.1",
+	"preload": "preload.js",
+	"main" : "index.html",
+	"logo": "icon.png",
+	"homepage" : "https://github.com/me10zyl/utools-phasmophobia",
+	"features": [
+		{
+		  "code": "phasmophobia",
+		  "explain": "恐鬼症小助手",
+		  "cmds":["phasmophobia","恐鬼症小助手"]
+		}
+	],
+	"author": "me10zyl"
+}
