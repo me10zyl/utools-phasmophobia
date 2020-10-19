@@ -4,7 +4,7 @@
       <el-main>
         <div>
           <span style='font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;line-height:1.5 ;font-size: 18px'>选择证据</span>
-          <el-button style="float: right" circle type="danger" @click="reset">重置</el-button>
+          <el-button style="float: right" circle type="danger" @click="reset" icon='el-icon-refresh'></el-button>
         </div>
         <div v-for="(evidences,i) in selectedEvidenceList">
           <el-row style="margin-top: 20px">
