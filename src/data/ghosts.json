@@ -175,7 +175,7 @@
     "huntThreshold": "50%",
     "speed": "1.7–2.8 m/s",
     "lineOfSightAcceleration": true,
-    "traits": ["猎杀时变换形态", "有几率留下六指手印、双指指纹、五指键盘", "门窗翻动概率不锁指纹"],
+    "traits": ["猎杀时变换形态", "有几率留下六指手印、双指指纹、五指键盘印", "门窗翻动概率不锁指纹"],
     "evidences": ["EMF5", "紫外线", "灵球"],
     "specialProof": "紫外线（六指）"
   },

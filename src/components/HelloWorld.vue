@@ -190,19 +190,19 @@ export default {
 
 <style scoped>
 .ghost-helper {
-  --ink: #253342;
-  --muted: #788696;
-  --line: #d7e1e8;
-  --paper: #f7fafc;
-  --blue: #2d7fba;
-  --green: #438667;
-  --red: #bf625b;
+  --ink: #193244;
+  --muted: #4d6576;
+  --line: #b9ceda;
+  --paper: #ffffff;
+  --blue: #176f9f;
+  --green: #216b48;
+  --red: #a8413b;
   box-sizing: border-box;
   min-height: 100vh;
   padding: 12px 16px 20px;
   color: var(--ink);
-  background: linear-gradient(135deg, #edf4f7, #fafbf8 52%, #e9f2ef);
-  font-family: Georgia, "Songti SC", "STSong", serif;
+  background: linear-gradient(135deg, #dfeef4, #f5f8f5 52%, #dcece6);
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
 }
 
 .evidence-panel,
@@ -216,10 +216,10 @@ export default {
 
 .evidence-panel {
   padding: 10px 12px 8px;
-  border: 1px solid var(--line);
+  border: 1px solid #a9c1cf;
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.83);
-  box-shadow: 0 2px 8px rgba(46, 74, 94, 0.07);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(32, 72, 96, 0.12);
 }
 
 .panel-heading,
@@ -251,21 +251,22 @@ export default {
 }
 
 .filter-summary strong {
-  color: #1f4a63;
-  font-size: 14px;
+  color: #143e58;
+  font-size: 16px;
 }
 
 .filter-summary span,
 .probability-hint {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .reset-button {
   padding: 0;
-  color: #5d768a;
+  color: #315d75;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .reset-button:hover {
@@ -278,16 +279,17 @@ export default {
 }
 
 .evidence-button {
-  gap: 5px;
-  min-width: 91px;
-  padding: 5px 7px;
-  color: #425667;
-  border: 1px solid #c9d8e1;
+  gap: 6px;
+  min-width: 100px;
+  padding: 6px 8px;
+  color: #29485b;
+  border: 1px solid #a9c3d1;
   border-radius: 4px;
-  background: #fafdfe;
+  background: #ffffff;
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
   transition: background 0.12s, border-color 0.12s, transform 0.12s;
 }
 
@@ -301,12 +303,12 @@ export default {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
-  color: #7791a1;
+  width: 16px;
+  height: 16px;
+  color: #496d82;
   border: 1px solid currentColor;
   border-radius: 50%;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -316,9 +318,9 @@ export default {
 
 .evidence-probability {
   margin-left: auto;
-  color: #a77728;
-  font-size: 11px;
-  font-weight: bold;
+  color: #8a5b08;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .evidence-button.is-selected {
@@ -348,19 +350,20 @@ export default {
 .result-header {
   margin-top: 12px;
   margin-bottom: 8px;
-  color: #587083;
-  font-size: 12px;
+  color: #36586d;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .result-header strong {
-  color: #1d668f;
-  font-size: 18px;
+  color: #0f6090;
+  font-size: 20px;
 }
 
 .legend {
   gap: 8px;
-  color: #788696;
-  font-size: 10px;
+  color: #526f81;
+  font-size: 12px;
 }
 
 .legend i {
@@ -387,29 +390,31 @@ export default {
 .ghost-card {
   display: flex;
   flex-direction: column;
-  min-height: 211px;
+  min-height: 216px;
   padding: 10px 11px;
-  border: 1px solid var(--line);
+  border: 1px solid #b6cbd6;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 6px rgba(46, 74, 94, 0.05);
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(32, 72, 96, 0.1);
 }
 
 .category {
   padding: 2px 5px;
-  color: #61717c;
+  color: #405c6c;
   border-radius: 3px;
-  background: #edf2f3;
-  font-size: 10px;
+  background: #e4f0f5;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .sight {
-  color: #47805f;
-  font-size: 10px;
+  color: #216b48;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .sight.muted {
-  color: #8c9aa5;
+  color: #657986;
 }
 
 .name-row {
@@ -419,23 +424,25 @@ export default {
 
 .name-row h2 {
   margin: 0;
-  color: #213e51;
-  font-size: 19px;
-  line-height: 1.1;
+  color: #153b52;
+  font-size: 21px;
+  line-height: 1.15;
 }
 
 .hunt-threshold {
   flex: 0 0 auto;
-  color: #a87524;
-  font-size: 10px;
+  color: #875c14;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .quick-memory {
-  min-height: 16px;
-  margin: 4px 0 7px;
-  color: #617383;
-  font-size: 11px;
-  line-height: 1.3;
+  min-height: 18px;
+  margin: 5px 0 8px;
+  color: #3e5d70;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .evidence-tags {
@@ -445,18 +452,19 @@ export default {
 }
 
 .evidence-tag {
-  padding: 2px 5px;
-  color: #577083;
-  border: 1px solid #d4e0e7;
+  padding: 3px 5px;
+  color: #34576c;
+  border: 1px solid #bfd3de;
   border-radius: 3px;
-  background: #f7fbfd;
-  font-size: 10px;
+  background: #f5fbfd;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .evidence-tag b {
   margin-left: 2px;
-  color: #a77728;
-  font-size: 9px;
+  color: #8a5b08;
+  font-size: 11px;
 }
 
 .evidence-tag.is-selected {
@@ -495,27 +503,26 @@ export default {
 
 .stats dt {
   margin-bottom: 2px;
-  color: #82929d;
-  font-size: 9px;
+  color: #5f7888;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .stats dd {
   margin: 0;
-  color: #526778;
-  font-size: 9px;
-  line-height: 1.25;
+  color: #2d4c60;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .traits {
-  display: -webkit-box;
-  margin: auto 0 0;
-  padding-left: 13px;
-  overflow: hidden;
-  color: #667886;
-  font-size: 10px;
-  line-height: 1.35;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  margin: 0;
+  padding-left: 14px;
+  color: #3e5e70;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .traits li + li {
@@ -528,11 +535,12 @@ export default {
 
 .empty-state {
   padding: 30px 16px;
-  color: #718493;
-  border: 1px dashed #aabfc9;
+  color: #365b70;
+  border: 1px dashed #8fadb9;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.55);
-  font-size: 13px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 
