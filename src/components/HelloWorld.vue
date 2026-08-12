@@ -27,10 +27,11 @@
           @contextmenu.prevent="excludeEvidence(evidence)"
         >
           <span class="evidence-mark">{{ evidenceMark(evidence) }}</span>
-          {{ evidence }}
+          <span class="evidence-name">{{ evidence }}</span>
+          <span v-if="activeEvidenceCount" class="evidence-probability">{{ evidenceProbability(evidence) }}</span>
         </button>
       </div>
-      <p class="hint"><span>左键</span> 确认 &nbsp; <span>右键</span> 排除 &nbsp;·&nbsp; 再次点击同一状态可取消</p>
+      <p class="hint"><span>左键</span> 确认 &nbsp; <span>右键</span> 排除 &nbsp;·&nbsp; 再次点击同一状态可取消<span v-if="activeEvidenceCount"> · 百分比为当前候选鬼魂具备该证据的概率</span></p>
     </section>
 
     <section class="result-header">
@@ -74,7 +75,7 @@
             :key="evidence"
             class="evidence-tag"
             :class="evidenceState(evidence)"
-          >{{ evidence }}</span>
+          >{{ evidence }} <b v-if="activeEvidenceCount">{{ evidenceProbability(evidence) }}</b></span>
         </div>
 
         <ul class="traits">
@@ -130,6 +131,19 @@ export default {
 
         return hasAllSelectedEvidences && !hasExcludedEvidence
       })
+    },
+    evidenceProbabilities () {
+      const remainingGhostCount = this.filteredGhostTypes.length
+      const probabilities = {}
+
+      this.evidences.forEach(function (evidence) {
+        const ghostCount = this.filteredGhostTypes.filter(function (ghost) {
+          return ghost.evidences.indexOf(evidence) !== -1
+        }).length
+        probabilities[evidence] = remainingGhostCount ? ghostCount / remainingGhostCount : 0
+      }, this)
+
+      return probabilities
     }
   },
   methods: {
@@ -151,6 +165,10 @@ export default {
         return '×'
       }
       return '+'
+    },
+    evidenceProbability (evidence) {
+      const probability = this.evidenceProbabilities[evidence] || 0
+      return Math.round(probability * 100) + '%'
     },
     selectEvidence (evidence) {
       if (this.selectedEvidences.indexOf(evidence) !== -1) {
@@ -287,7 +305,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-width: 102px;
+  min-width: 120px;
   padding: 9px 13px;
   overflow: hidden;
   color: #d5d4ce;
@@ -318,6 +336,26 @@ h1 {
   border-radius: 50%;
   font-size: 12px;
   font-weight: 700;
+}
+
+.evidence-name {
+  white-space: nowrap;
+}
+
+.evidence-probability {
+  margin-left: auto;
+  color: #d9bd78;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.evidence-button.is-selected .evidence-probability {
+  color: #dff0c7;
+}
+
+.evidence-button.is-excluded .evidence-probability {
+  color: #f1c7c1;
 }
 
 .evidence-button.is-selected {
@@ -505,6 +543,21 @@ h1 {
   color: #f0c9c3;
   border-color: #98574f;
   background: #4a2e2a;
+}
+
+.evidence-tag b {
+  margin-left: 2px;
+  color: #ddc177;
+  font-family: Georgia, serif;
+  font-size: 10px;
+}
+
+.evidence-tag.is-selected b {
+  color: #dff0c7;
+}
+
+.evidence-tag.is-excluded b {
+  color: #f0c9c3;
 }
 
 .traits {
