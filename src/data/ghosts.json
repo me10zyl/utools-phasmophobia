@@ -111,11 +111,11 @@
     "id": "chigui",
     "category": "常速鬼",
     "name": "赤鬼",
-    "quickMemory": "猎杀全程几乎可见；哈气无白雾",
+    "quickMemory": "猎杀全程几乎可见；鬼魂事件哈气无白雾",
     "huntThreshold": "50%",
     "speed": "1.7–2.8 m/s",
     "lineOfSightAcceleration": true,
-    "traits": ["猎杀时闪烁极快，几乎全程实体可见", "哈气无白雾", "现身扣双倍理智（20 点）"],
+    "traits": ["猎杀时闪烁极快，几乎全程实体可见", "鬼魂事件哈气无白雾", "现身触碰扣双倍理智（20 点）"],
     "evidences": ["EMF5", "刺骨", "点阵"],
     "specialProof": "—"
   },
