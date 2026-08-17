@@ -134,7 +134,7 @@
   {
     "id": "yuanling-dot",
     "category": "常速鬼",
-    "name": "怨灵",
+    "name": "御灵",
     "quickMemory": "点阵肉眼看不到，不换房",
     "huntThreshold": "50%",
     "speed": "1.7–2.8 m/s",
@@ -194,7 +194,7 @@
   {
     "id": "damo",
     "category": "变速鬼",
-    "name": "达摩",
+    "name": "达彦",
     "quickMemory": "女鬼；你动它快，你站它慢",
     "huntThreshold": "基础 50%；移动时 60%",
     "speed": "1.2–2.25 m/s",
